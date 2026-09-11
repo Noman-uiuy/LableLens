@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.log
+
+# Database & Runtime
+*.db
+*.sqlite3
+tunnel_url.txt
+cloudflared.exe
+*.zip
+*.bak
+*.previous_backup
+
+# OS files
+.DS_Store
+Thumbs.db
