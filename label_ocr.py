@@ -30,8 +30,13 @@ from datetime import datetime
 # ============================================================
 
 class Config:
-    # ── Auto-detected Tesseract path on Windows ──────────────────────────────
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    # ── Auto-detected Tesseract path (Windows fallback / Linux system path) ──
+    import os
+    if os.name == 'nt':
+        for _p in [r'C:\Program Files\Tesseract-OCR\tesseract.exe', r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe']:
+            if os.path.exists(_p):
+                pytesseract.pytesseract.tesseract_cmd = _p
+                break
     # ────────────────────────────────────────────────────────────────────────
 
     # Image quality

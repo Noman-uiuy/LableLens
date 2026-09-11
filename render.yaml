@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: lablelens
+    runtime: docker
+    plan: free
+    envVars:
+      - key: PORT
+        value: 10000
